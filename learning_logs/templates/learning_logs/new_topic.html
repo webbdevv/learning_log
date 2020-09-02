@@ -1,0 +1,13 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+<p>Add a new topic:</p>
+
+<form action="{% url 'learning_logs:new_topic' %}" method='post'>
+<!-- Specifies the url and method -->
+{% csrf_token %} <!-- Security purposes -->
+{{ form.as_p }} <!-- Django specifies how to display the form -->
+<button name="submit">Add topic</button>
+</form>
+
+{% endblock content %}
